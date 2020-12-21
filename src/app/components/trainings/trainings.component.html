@@ -1,0 +1,19 @@
+<table class="table">
+  <tr class="thead-dark">
+    <th>Id</th>
+    <th>Description</th>
+    <th>Created By</th>
+    <th>Assigned To</th>
+    <th>Type</th>
+    <th>Date</th>
+  </tr>
+  <tr *ngFor="let training of trainings">
+    <td>{{training.id}}</td>
+    <td>{{training.description}}</td>
+    <td>{{training.created_by.first_name + " " +training.created_by.last_name}}</td>
+    <td>{{training.assigned_to.first_name + " " + training.assigned_to.last_name}}</td>
+    <td>{{training.training_type.name}}</td>
+    <td>{{training.training_date | date: 'dd-MM-yyyy'}}</td>
+  </tr>
+
+</table>
